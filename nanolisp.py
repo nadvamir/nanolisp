@@ -20,6 +20,8 @@ def get_list_elements(list_expression):
     return list_expression.split()
 
 def evaluate(x, env):
+    if x in env:
+        return env[x]
     isBaseType, x = attempt_baseType(x)
     if isBaseType:
         return x
@@ -28,6 +30,8 @@ def evaluate(x, env):
         return '()'
     if x[0] == 'defvar':
         store_state(x[1], x[2], env)
+    if x[0] == 'print':
+        return evaluate(x[1], env)
     return "Error parsing input"
 
 def store_state(name, expression, env):

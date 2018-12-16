@@ -8,6 +8,7 @@ def test_evaluate_with_state():
     state = {}
     evaluate("(defvar x 10)", state)
     assert state['x'] == 10
+    assert evaluate("(print x)", state) == 10
 
 def test_eval_types():
     state = {}
