@@ -17,7 +17,8 @@ def repl(state):
     command = input("> ")
     if command == "exit":
         return False
-    return evaluate(command, state)
+    print(evaluate(command, state))
+    return True
 
 if __name__ == "__main__":
     print(get_welcome_text())
