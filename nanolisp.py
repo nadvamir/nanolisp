@@ -23,7 +23,7 @@ def get_list_elements(list_expression):
 
 def evaluate(x, env):
     if x in env:
-        return env[x]
+        return env[x] #test
     isBaseType, x = attempt_baseType(x)
     if isBaseType:
         return x
