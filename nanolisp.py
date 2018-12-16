@@ -20,7 +20,7 @@ def get_list_elements(list_expression):
     list_expression = list_expression[1:-1]
     if len(list_expression) == 0:
         return []
-    return list_expression.split("\s+")
+    return list_expression.split()
 
 def evaluate(x, env):
     env['x'] = 10
