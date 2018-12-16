@@ -24,9 +24,8 @@ def get_list_elements(list_expression):
 
 def evaluate(x, env):
     env['x'] = 10
-    if isinstance(x, float):
-        return x
-    if isinstance(x, int):
+    isBaseType, x = attempt_baseType(x)
+    if isBaseType:
         return x
     if x in env:
         return env[x]
