@@ -3,11 +3,11 @@
 def get_welcome_text():
     return "NanoLisp v0.1 REPL"
 
-def evaluate():
+def evaluate(command):
     return False
 
 def repl():
-    command = raw_input("> ")
+    command = input("> ")
     return evaluate(command)
 
 if __name__ == "__main__":
