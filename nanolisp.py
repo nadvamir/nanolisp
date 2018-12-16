@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def store_state(name, expression, env):
-    pass
+    env[name] = evaluate(expression)
 
 def get_list_elements(list_expression):
     list_expression = list_expression[1:-1]
