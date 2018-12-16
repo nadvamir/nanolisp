@@ -19,3 +19,4 @@ def test_get_list_elements():
     assert get_list_elements("()") == []
     assert get_list_elements("(1 2)") == ["1", "2"]
     assert get_list_elements("(1    2)") == ["1", "2"]
+    assert get_list_elements("(1 (2 x) 3)") == ["1", "(2 x)", "3"]

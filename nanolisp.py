@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+import re
+
 def attempt_baseType(x):
     try:
         x = int(x)
@@ -17,7 +19,7 @@ def get_list_elements(list_expression):
     list_expression = list_expression[1:-1]
     if len(list_expression) == 0:
         return []
-    return list_expression.split()
+    return re.findall('(\w|\(.*\))', list_expression, re.DOTALL)
 
 def evaluate(x, env):
     if x in env:
