@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+def get_list_elements(list_expression):
+    return []
+
 def evaluate(x, env):
     env['x'] = 10
     if isinstance(x, float):
