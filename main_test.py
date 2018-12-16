@@ -11,8 +11,8 @@ def test_evaluate_with_state():
 
 def test_eval_types():
     state = {}
-    assert evaluate(3, state) == 3
-    assert evaluate(3.0, state) == 3.0
+    assert evaluate("3", state) == 3
+    assert evaluate("3.0", state) == 3.0
 
 def test_get_list_elements():
     assert get_list_elements("()") == []
