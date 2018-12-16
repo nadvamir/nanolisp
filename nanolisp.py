@@ -6,6 +6,8 @@ def evaluate(x, env):
         return x
     if isinstance(x, int):
         return x
+    if x in env:
+        return env[x]
     return False
 
 def get_welcome_text():
