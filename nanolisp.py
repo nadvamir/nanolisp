@@ -19,7 +19,7 @@ def get_list_elements(list_expression):
     list_expression = list_expression[1:-1]
     if len(list_expression) == 0:
         return []
-    return re.findall('(\w|\(.*\))', list_expression, re.DOTALL)
+    return re.findall('(\w+|\(.*\))', list_expression, re.DOTALL)
 
 def evaluate(x, env):
     if x in env:
