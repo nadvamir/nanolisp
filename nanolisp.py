@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+def store_state(name, expression, env):
+    pass
+
 def get_list_elements(list_expression):
     return []
 
