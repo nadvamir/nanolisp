@@ -8,7 +8,7 @@ def evaluate(x, env):
         return x
     if x in env:
         return env[x]
-    return True
+    return "Error parsing input"
 
 def get_welcome_text():
     return "NanoLisp v0.1 REPL"
