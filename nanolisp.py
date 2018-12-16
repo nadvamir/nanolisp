@@ -8,13 +8,15 @@ def evaluate(x, env):
         return x
     if x in env:
         return env[x]
-    return False
+    return True
 
 def get_welcome_text():
     return "NanoLisp v0.1 REPL"
 
 def repl(state):
     command = input("> ")
+    if command == "exit":
+        return False
     return evaluate(command, state)
 
 if __name__ == "__main__":

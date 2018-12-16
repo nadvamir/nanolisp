@@ -13,4 +13,4 @@ def test_eval_types():
     state = {}
     assert evaluate(3, state) == 3
     assert evaluate(3.0, state) == 3.0
-    assert not evaluate("str", state)
+    assert evaluate("str", state)
