@@ -1,5 +1,18 @@
 #!/usr/bin/python3
 
+def attempt_baseType(x):
+    try:
+        x = int(x)
+        return True, x
+    except:
+        pass
+    try:
+        x = float(x)
+        return True, x
+    except:
+        pass
+    return False, x 
+
 def store_state(name, expression, env):
     env[name] = evaluate(expression)
 
