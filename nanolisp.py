@@ -13,9 +13,6 @@ def attempt_baseType(x):
         pass
     return False, x 
 
-def store_state(name, expression, env):
-    env[name] = evaluate(expression)
-
 def get_list_elements(list_expression):
     list_expression = list_expression[1:-1]
     if len(list_expression) == 0:
@@ -23,13 +20,18 @@ def get_list_elements(list_expression):
     return list_expression.split()
 
 def evaluate(x, env):
-    env['x'] = 10
     isBaseType, x = attempt_baseType(x)
     if isBaseType:
         return x
-    if x in env:
-        return env[x]
+    x = get_list_elements(x)
+    if len(x) == 0:
+        return '()'
+    if x[0] == 'defvar':
+        store_state(x[1], x[2], env)
     return "Error parsing input"
+
+def store_state(name, expression, env):
+    env[name] = evaluate(expression, env)
 
 def get_welcome_text():
     return "NanoLisp v0.1 REPL"
