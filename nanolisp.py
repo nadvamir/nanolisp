@@ -4,6 +4,8 @@ def evaluate(x, env):
     env['x'] = 10
     if isinstance(x, float):
         return x
+    if isinstance(x, int):
+        return x
     return False
 
 def get_welcome_text():
