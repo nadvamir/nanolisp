@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 
+def evaluate(x, env):
+    env['x'] = 10
+    if isinstance(x, float):
+        return x
+    return False
+
 def get_welcome_text():
     return "NanoLisp v0.1 REPL"
-
-def evaluate(command, state):
-    state['x'] = 10
-    return False
 
 def repl(state):
     command = input("> ")
